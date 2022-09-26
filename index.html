@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Date &amp; Time with JavaScript</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/dateToString.js" defer></script>
+  <script src="assets/js/dateGet.js" defer></script>
+  <script src="assets/js/dateToLocal.js" defer></script>
+  <script src="assets/js/dateTimeFormat.js" defer></script>
+  <script src="assets/js/dateToLocalExamples.js" defer></script>
+  <script src="assets/js/dateToLocalEra.js" defer></script>
+  <script src="assets/js/dateToLocalTimeZoneName.js" defer></script>
+</head>
+<body>
+<h1>&mdash;&nbsp;&nbsp; Date &amp; Time with JavaScript &nbsp;&nbsp;&mdash;</h1>
+
+<main>
+  
+  <!-- Date to String -->
+  <section>
+    
+    <h2>Date to String</h2>
+    
+    <h3>String</h3>
+    <article>
+      <p>
+        The toString() method returns a string representing the specified Date object interpreted in the local timezone.
+      </p>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toString"
+           target="_blank">toString()
+        </a>
+      </span>
+      <div>
+        <em>new Date().toString();</em>
+        <span class="date-object-string"></span>
+      </div>
+    </article>
+    
+    <h3>Date String</h3>
+    <article>
+      <p>
+        The toDateString() method returns the date portion of a Date object interpreted in the local timezone in
+        English.
+      </p>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toDateString"
+           target="_blank">toDateString()
+        </a>
+      </span>
+      <div>
+        <em>new Date().toDateString();</em>
+        <span class="date-object-date-string"></span>
+      </div>
+    </article>
+    
+    <h3>UTC String</h3>
+    <article>
+      <p>The toUTCString() method converts a date to a string, interpreting it in the UTC time zone.</p>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toUTCString"
+           target="_blank">toUTCString()
+        </a>
+      </span>
+      <div>
+        <em>new Date().toUTCString();</em>
+        <span class="date-object-utc-string"></span>
+      </div>
+    </article>
+    
+    <h3>Time String</h3>
+    <article>
+      <p>
+        The toTimeString() method returns the time portion of a Date object interpreted in the local timezone in
+        English.
+      </p>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toTimeString"
+           target="_blank">toTimeString()
+        </a>
+      </span>
+      <div>
+        <em>new Date().toTimeString();</em>
+        <span class="date-object-time-string"></span>
+      </div>
+    </article>
+    
+    <h3>ISO String</h3>
+    <article>
+      <p>
+        The toISOString() method returns a string in simplified extended ISO format,
+        <br>
+        which is always 24 or 27 characters long
+        <br><br>
+        YYYY-MM-DDTHH:mm:ss.sssZ
+        <br><br>
+        or
+        <br><br>
+      &plusmn;YYYYYY-MM-DDTHH:mm:ss.sssZ,
+        <br><br>
+        respectively. The timezone is always zero UTC offset, as denoted by the suffix Z.
+      </p>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString"
+           target="_blank">toISOString()
+        </a>
+      </span>
+      <span class="link">
+        <b>Link</b>:
+        <a href="https://en.wikipedia.org/wiki/ISO_8601"
+           target="_blank">ISO 8601
+        </a>
+      </span>
+      <div>
+        <em>new Date().toISOString();</em>
+        <span class="date-object-iso-string"></span>
+      </div>
+    </article>
+    
+    <h3>ISO String &nbsp;&nbsp;&ndash;&nbsp;&nbsp; <small>Slice, use only the first 16 characters</small></h3>
+    <article>
+      <p>The slice() method extracts a section of a string and returns it as a new string, without modifying the
+        original string.</p>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice"
+           target="_blank">slice()
+        </a>
+      </span>
+      <div>
+        <em>new Date().toISOString().slice(0, 16);</em>
+        <span class="date-object-iso-string-slice"></span>
+      </div>
+    </article>
+    
+    <h3>ISO String &nbsp;&nbsp;&ndash;&nbsp;&nbsp; <small>Slice, and replace the letter 'T' with a space, a dash,
+      and a space ' - '</small></h3>
+    <article>
+      <p>
+        The replace() method returns a new string with one, some, or all matches of a pattern replaced by a replacement.
+        The pattern can be a string or a RegExp, and the replacement can be a string or a function called for each
+        match. If pattern is a string, only the first occurrence will be replaced. The original string is left
+        unchanged.
+      </p>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace"
+           target="_blank">replace()
+        </a>
+      </span>
+      <div>
+        <em>new Date().toISOString().slice(0, 16).replace(/T/g, ' - ');</em>
+        <span class="date-object-iso-string-slice-replace"></span>
+      </div>
+    </article>
+  
+  </section>
+  
+  <!-- Methods to get elements of Date and Time -->
+  <section>
+    
+    <h2>Methods to get elements of Date and Time</h2>
+    
+    <h3>getFullYear()</h3>
+    <article>
+      <p>
+        The getFullYear() method returns the year of the specified date according to local time.
+      </p>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear"
+           target="_blank">getFullYear()
+        </a>
+      </span>
+      <div>
+        <em>new Date().getFullYear().toString();</em>
+        <span class="compute-year"></span>
+      </div>
+    </article>
+    
+    <h3>getMinutes()</h3>
+    <article>
+      <p>
+        The getMinutes() method returns the minutes in the specified date according to local time.
+      </p>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMinutes"
+           target="_blank">getMinutes()
+        </a>
+      </span>
+      <div>
+        <em>new Date().getMinutes().toString();</em>
+        <span class="compute-minutes"></span>
+      </div>
+    </article>
+  
+  </section>
+  
+  <!-- toLocal - Date, Time Methods -->
+  <section>
+    
+    <h2>toLocal &nbsp;&ndash;&nbsp; Date, Time Methods</h2>
+    
+    <h3>toLocaleString()</h3>
+    <article>
+      <p>
+        The toLocaleString() method returns a string with a language-sensitive representation of this date. In
+        implementations with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat"
+                                target="_blank">Intl.DateTimeFormat API</a> support, this method simply calls Intl.DateTimeFormat.
+      </p>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString"
+           target="_blank">toLocaleString()
+        </a>
+      </span>
+      <div>
+        <em>new Date().toLocaleString();</em>
+        <span class="date-local-string"></span>
+      </div>
+    </article>
+    
+    <h3>toLocaleDateString()</h3>
+    <article>
+      <p>
+        The toLocaleDateString() method returns a string with a language-sensitive representation of the date portion of
+        the specified date in the user agent's timezone. In implementations with
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat"
+           target="_blank">Intl.DateTimeFormat API</a>
+        support, this method simply calls Intl.DateTimeFormat.
+      </p>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString"
+           target="_blank">toLocaleDateString()
+        </a>
+      </span>
+      <div>
+        <em>new Date().toLocaleDateString();</em>
+        <span class="date-local-date-string"></span>
+      </div>
+    </article>
+    
+    <h3>toLocaleTimeString()</h3>
+    <article>
+      <p>
+        The toLocaleTimeString() method returns a string with a language-sensitive representation of the time portion of
+        the date. In implementations with
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat"
+           target="_blank">Intl.DateTimeFormat API</a> support, this method simply calls Intl.DateTimeFormat.
+      </p>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString"
+           target="_blank">toLocaleTimeString()
+        </a>
+      </span>
+      <div>
+        <em>new Date().toLocaleTimeString();</em>
+        <span class="date-local-time-string"></span>
+      
+      </div>
+    </article>
+  
+  </section>
+  
+  <!-- Date Time Format Constructor -->
+  <section>
+    
+    <h2>Date Time Format Constructor</h2>
+    
+    <h3>Default</h3>
+    <article>
+      <p>
+        The Intl.DateTimeFormat() constructor creates Intl.DateTimeFormat objects that enable language-sensitive date
+        and time formatting.
+      </p>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat"
+           target="_blank">Intl.DateTimeFormat() constructor
+        </a>
+      </span>
+      <div>
+        <em>new Intl.DateTimeFormat().format(new Date());</em>
+        <span class="date-time-format-default"></span>
+      </div>
+    </article>
+    
+    <h3>Date Style Full</h3>
+    <article>
+      <p>
+        The date formatting style to use when calling format(). Possible values include:
+      </p>
+      <ul>
+        <li><code>&quot;full&quot;</code></li>
+        <li><code>&quot;long&quot;</code></li>
+        <li><code>&quot;medium&quot;</code></li>
+        <li><code>&quot;short&quot;</code></li>
+      </ul>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#dateStyle"
+           target="_blank">Date Style Options
+        </a>
+      </span>
+      <div>
+        <em>new Intl.DateTimeFormat('en-US', { dateStyle: 'full' }).format(new Date());</em>
+        <span class="date-time-format-date-style-full"></span>
+      </div>
+    </article>
+    
+    <h3>Time Style Full</h3>
+    <article>
+      <p>
+        The time formatting style to use when calling format(). Possible values include:
+      </p>
+      <ul>
+        <li><code>&quot;full&quot;</code></li>
+        <li><code>&quot;long&quot;</code></li>
+        <li><code>&quot;medium&quot;</code></li>
+        <li><code>&quot;short&quot;</code></li>
+      </ul>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#timeStyle"
+           target="_blank">Time Style Options
+        </a>
+      </span>
+      <div>
+        <em>new Intl.DateTimeFormat('en-US', { timeStyle: 'full' }).format(new Date());</em>
+        <span class="date-time-format-time-style-full"></span>
+      
+      </div>
+    </article>
+  
+  </section>
+  
+  <!-- toLocale...String() Examples -->
+  <section>
+    
+    <h2>toLocale...String() Examples</h2>
+    
+    <h3>Year</h3>
+    <article>
+      <p>The representation of the year. Possible values are:</p>
+      <ul>
+        <li><code>&quot;numeric&quot;</code> (e.g., <code>2022</code>)</li>
+        <li><code>&quot;2-digit&quot;</code> (e.g., <code>22</code>)</li>
+      </ul>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#year"
+           target="_blank">Year Option
+        </a>
+      </span>
+      <div>
+        <em>new Date().toLocaleString(undefined, { year: 'numeric' });</em>
+        <span class="date-local-string-year"></span>
+      </div>
+    </article>
+    
+    <h3>Full Date</h3>
+    <article>
+      <p>
+        The representation of the weekday. Possible values are:
+      </p>
+      <ul>
+        <li><code>&quot;long&quot;</code> (e.g., <code>Thursday</code>)</li>
+        <li><code>&quot;short&quot;</code> (e.g., <code>Thu</code>)</li>
+        <li><code>&quot;narrow&quot;</code> (e.g., <code>T</code>). Two weekdays may have the same narrow style for some
+          locales
+          <br>
+          (e.g. <code>Tuesday</code>'s narrow style is also <code>T</code>)
+        </li>
+      </ul>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#weekday"
+           target="_blank">Weekday Option
+        </a>
+      </span>
+      <div>
+      <pre>
+new Date().toLocaleString(undefined, {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+});
+      </pre>
+        <span class="date-local-string-full-date"></span>
+      </div>
+    </article>
+    
+    <h3>Full Date &amp; Time &nbsp;&nbsp;&ndash;&nbsp;&nbsp; <small>24-hour time, replace a comma ',' with a dash
+      '-'</small></h3>
+    <article>
+      <p>
+        Whether to use 12-hour time (as opposed to 24-hour time). Possible values are <code>true</code> and
+        <code>false</code>;
+        the default is locale dependent. This option overrides the <code>hc</code> language tag and/or the hourCycle
+        option in case both are present.
+      </p>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#hour12"
+           target="_blank">12/24 Hour Time Option
+        </a>
+      </span>
+      <div>
+      <pre>
+new Date().toLocaleString(undefined, {
+    hour12: false,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit'
+  }
+).replace(/,/, ' - ');
+      </pre>
+        <span class="date-local-string-full-date-replace"></span>
+      </div>
+    </article>
+    
+    <h3>Full Date &nbsp;&nbsp;&ndash;&nbsp;&nbsp; <small>Buddhist Calendar, English</small></h3>
+    <article>
+      <p>
+        Calendar. Possible values include: <code>&quot;buddhist&quot;</code>, <code>&quot;chinese&quot;</code>,
+        <code>&quot;coptic&quot;</code>, <code>&quot;dangi&quot;</code>, <code>&quot;ethioaa&quot;</code>,
+        <code>&quot;ethiopic&quot;</code>, <code>&quot;gregory&quot;</code>, <code>&quot;hebrew&quot;</code>,
+        <code>&quot;indian&quot;</code>, <code>&quot;islamic&quot;</code>, <code>&quot;islamic-umalqura&quot;</code>,
+        <code>&quot;islamic-tbla&quot;</code>, <code>&quot;islamic-civil&quot;</code>,
+        <code>&quot;islamic-rgsa&quot;</code>,
+        <code>&quot;iso8601&quot;</code>, <code>&quot;japanese&quot;</code>, <code>&quot;persian&quot;</code>,
+        <code>&quot;roc&quot;</code>, <code>&quot;islamic-civil&quot;</code>.
+      </p>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#calendar"
+           target="_blank">calendar Option
+        </a>
+      </span>
+      <div>
+      <pre>
+new Date().toLocaleString(undefined, {
+    calendar: 'buddhist',
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }
+);
+      </pre>
+        <span class="date-local-string-buddhist-undefined"></span>
+      </div>
+    </article>
+    
+    <h3>Full Date &nbsp;&nbsp;&ndash;&nbsp;&nbsp; <small>Buddhist Calendar, Thai</small></h3>
+    <article>
+      <span class="link">
+        <b>Link</b>:
+        <a href="https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/language_territory_information.html"
+           target="_blank">Language-Territory Information
+        </a>
+      </span>
+      <div>
+      <pre>
+new Date().toLocaleString('th-TH', {
+    calendar: 'buddhist',
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }
+);
+      </pre>
+        <span class="date-local-string-buddhist-thai"></span>
+      </div>
+    </article>
+    
+    <h3>Full Date &nbsp;&nbsp;&ndash;&nbsp;&nbsp; <small>Buddhist Calendar, all Thai</small></h3>
+    <article>
+      <p>
+        Numbering System. Possible values include: <code>&quot;arab&quot;</code>, <code>&quot;arabext&quot;</code>, <code>&quot;bali&quot;</code>,
+        <code>&quot;beng&quot;</code>, <code>&quot;deva&quot;</code>, <code>&quot;fullwide&quot;</code>,
+        <code>&quot;gujr&quot;</code>,
+        <code>&quot;guru&quot;</code>, <code>&quot;hanidec&quot;</code>, <code>&quot;khmr&quot;</code>,
+        <code>&quot;knda&quot;</code>, <code>&quot;laoo&quot;</code>, <code>&quot;latn&quot;</code>, <code>&quot;limb&quot;</code>,
+        <code>&quot;mlym&quot;</code>, <code>&quot;mong&quot;</code>, <code>&quot;mymr&quot;</code>, <code>&quot;orya&quot;</code>,
+        <code>&quot;tamldec&quot;</code>, <code>&quot;telu&quot;</code>, <code>&quot;thai&quot;</code>, <code>&quot;tibt&quot;</code>.
+      </p>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#numberingSystem"
+           target="_blank">numberingSystem Option
+        </a>
+      </span>
+      <div>
+      <pre>
+new Date().toLocaleString('th-TH', {
+    calendar: 'buddhist',
+    numberingSystem: 'thai',
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }
+);
+      </pre>
+        <span class="date-local-string-buddhist-all-thai"></span>
+      </div>
+    </article>
+    
+    <h3>Full Date &amp; Time &nbsp;&nbsp;&ndash;&nbsp;&nbsp; <span>Time Zone New York</span></h3>
+    <article>
+      <span class="link">
+        <b>Link</b>:
+        <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"
+           target="_blank">Time Zones
+        </a>
+      </span>
+      <div>
+      <pre>
+new Date().toLocaleString(undefined, {
+    timeZone: 'America/New_York',
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  }
+);
+      </pre>
+        <span class="date-local-string-full-date-time-time-zone"></span>
+      </div>
+    </article>
+  
+  </section>
+  
+  <!-- Era -->
+  <section>
+    
+    <h2>Era</h2>
+    
+    <h3>Era &nbsp;&nbsp;&ndash;&nbsp;&nbsp; <small>Date &amp; Time</small></h3>
+    <article>
+      <p>
+        The representation of the era. Possible values are:
+      </p>
+      <ul>
+        <li><code>&quot;long&quot;</code> (e.g., <code>Anno Domini</code>)</li>
+        <li><code>&quot;short&quot;</code> (e.g., <code>AD</code>)</li>
+        <li><code>&quot;narrow&quot;</code> (e.g., <code>A</code>)</li>
+      </ul>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#era"
+           target="_blank">Era Options
+        </a>
+      </span>
+      <div>
+        <em>new Date().toLocaleString(undefined, {era: 'long'});</em>
+        <span class="date-local-string-era"></span>
+      </div>
+    </article>
+    
+    <h3>Era &nbsp;&nbsp;&ndash;&nbsp;&nbsp; <small>Time</small></h3>
+    <article>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString"
+           target="_blank">toLocaleTimeString()
+        </a>
+      </span>
+      <div>
+        <em>new Date().toLocaleTimeString(undefined, {era: 'long'});</em>
+        <span class="date-local-string-era-time"></span>
+      </div>
+    </article>
+    
+    <h3>Era &nbsp;&nbsp;&ndash;&nbsp;&nbsp; <small>Only</small></h3>
+    <article>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split"
+           target="_blank">split()
+        </a>
+      </span>
+      <div>
+        <em>new Date().toLocaleTimeString(undefined, {era: 'long'}).split(',')[0];</em>
+        <span class="date-local-string-era-only"></span>
+      </div>
+    </article>
+  
+  </section>
+  
+  <!-- Time Zone Name -->
+  <section>
+    
+    <h2>Time Zone Name</h2>
+    
+    <h3>Time Zone Name &nbsp;&nbsp;&ndash;&nbsp;&nbsp; <small>Date &amp; Time</small></h3>
+    <article>
+      <p>
+        The localized representation of the time zone name. Possible values are:
+      </p>
+      <ul>
+        <li><code>&quot;long&quot;</code> Long localized form (e.g., <code>Pacific Standard Time</code>, <code>Nordamerikanische
+          Westk&uuml;sten-Normalzeit</code>)
+        </li>
+        <li><code>&quot;short&quot;</code> Short localized form (e.g.: <code>PST</code>, <code>GMT-8</code>)</li>
+        <li><code>&quot;shortOffset&quot;</code> Short localized GMT format (e.g., <code>GMT-8</code>)</li>
+        <li><code>&quot;longOffset&quot;</code> Long localized GMT format (e.g., <code>GMT-0800</code>)</li>
+        <li><code>&quot;shortGeneric&quot;</code> Short generic non-location format (e.g.: <code>PT</code>, <code>Los
+          Angeles
+          Zeit</code>)
+        </li>
+        <li><code>&quot;longGeneric&quot; </code>Long generic non-location format (e.g.: <code>Pacific Time</code>,
+          <code>Nordamerikanische
+            Westk&uuml;stenzeit</code>)
+        </li>
+      </ul>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#timeZoneName"
+           target="_blank">time Zone Name Options
+        </a>
+      </span>
+      <div>
+        <em>new Date().toLocaleString(undefined, {timeZoneName: 'long'});</em>
+        <span class="date-local-string-time-zone-name"></span>
+      </div>
+    </article>
+    
+    <h3>Time Zone Name &nbsp;&nbsp;&ndash;&nbsp;&nbsp; <small>Date</small></h3>
+    <article>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString"
+           target="_blank">toLocaleDateString()
+        </a>
+      </span>
+      <div>
+        <em>new Date().toLocaleDateString(undefined, {timeZoneName: 'long'});</em>
+        <span class="date-local-string-time-zone-name-date"></span>
+      </div>
+    </article>
+    
+    <h3>Time Zone Name &nbsp;&nbsp;&ndash;&nbsp;&nbsp; <small>Only</small></h3>
+    <article>
+      <span class="link">
+        <b>MDN</b>:
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split"
+           target="_blank">split()
+        </a>
+      </span>
+      <div>
+        <em>new Date().toLocaleDateString(undefined, {timeZoneName: 'long'}).split(',')[1];</em>
+        <span class="date-local-string-time-zone-name-only"></span>
+      </div>
+    </article>
+  
+  </section>
+
+</main>
+
+</body>
+</html>
